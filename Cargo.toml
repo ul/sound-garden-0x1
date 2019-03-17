@@ -10,7 +10,8 @@ members = [
     "audio_graph",
     "audio_modules",
     "audio_stack",
-    "play_stack"
+    "play_stack",
+    "vst_stack"
 ]
 
 [dependencies]

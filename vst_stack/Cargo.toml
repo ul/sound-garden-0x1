@@ -1,0 +1,16 @@
+[package]
+name = "vst_stack"
+version = "0.1.0"
+authors = ["Ruslan Prokopchuk <fer.obbee@gmail.com>"]
+edition = "2018"
+
+[dependencies]
+audio_graph = { path = "../audio_graph" }
+audio_modules = { path = "../audio_modules" }
+audio_stack = { path = "../audio_stack" }
+vst = "0.0.2"
+parking_lot = "0.7.1"
+
+[lib]
+name = "soundgarden"
+crate-type = ["cdylib"]
