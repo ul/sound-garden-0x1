@@ -1,0 +1,16 @@
+[package]
+name = "sound-garden-0x1"
+version = "0.1.0"
+authors = ["Ruslan Prokopchuk <fer.obbee@gmail.com>"]
+edition = "2018"
+
+[workspace]
+
+members = [
+    "audio_graph",
+    "audio_modules",
+    "audio_stack",
+    "play_stack"
+]
+
+[dependencies]
