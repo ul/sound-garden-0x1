@@ -1,6 +1,6 @@
-//! # Specrtral shuffle
+//! # Spectral transform
 //!
-//! Do a FFT of the input signal, shuffle bins, and produce an output signal with IFFT.
+//! Do a FFT of the input signal, transform bins, and produce an output signal with IFFT.
 //!
 //! Source to connect: input.
 //!

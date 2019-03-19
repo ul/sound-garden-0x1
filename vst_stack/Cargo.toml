@@ -8,8 +8,14 @@ edition = "2018"
 audio_graph = { path = "../audio_graph" }
 audio_modules = { path = "../audio_modules" }
 audio_stack = { path = "../audio_stack" }
-vst = "0.0.2"
+cocoa = "0.18.4"
+objc = "0.2.5"
 parking_lot = "0.7.1"
+vst = "0.0.2"
+rand = "0.6.5"
+notify = "4.0.10"
+dirs = "1.0.5"
+chrono = "0.4.6"
 
 [lib]
 name = "soundgarden"
