@@ -5,7 +5,7 @@ authors = ["Ruslan Prokopchuk <fer.obbee@gmail.com>"]
 edition = "2018"
 
 [dependencies]
-cpal = "0.8.2"
+cpal = "0.10.0"
 audio_graph = { path = "../audio_graph" }
 audio_modules = { path = "../audio_modules" }
 audio_stack = { path = "../audio_stack" }

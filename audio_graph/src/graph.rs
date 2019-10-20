@@ -5,7 +5,7 @@ use fixedbitset::FixedBitSet;
 use petgraph::algo::{toposort, DfsSpace};
 use petgraph::prelude::*;
 
-pub type AudioNode = Box<Module + Send>;
+pub type AudioNode = Box<dyn Module + Send>;
 
 /// Structure which manages network of Modules.
 pub struct AudioGraph {

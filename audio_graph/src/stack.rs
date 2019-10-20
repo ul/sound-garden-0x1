@@ -31,8 +31,8 @@ pub fn build_graph(mut ops: Vec<Op>, channels: u8, inputs: u8) -> Result<AudioGr
             Op::Pop => {
                 let _ = stack.pop();
             }
-            Op::Dup => match stack.last() {
-                Some(idx) => stack.push(*idx),
+            Op::Dup => match stack.last().cloned() {
+                Some(idx) => stack.push(idx),
                 None => return Err(Error::StackExhausted(i)),
             },
             Op::Swap => {

@@ -127,7 +127,7 @@ impl Plugin for SoundGarden {
         }
     }
 
-    fn get_editor(&mut self) -> Option<&mut vst::editor::Editor> {
+    fn get_editor(&mut self) -> Option<&mut dyn vst::editor::Editor> {
         Some(&mut self.editor)
     }
 

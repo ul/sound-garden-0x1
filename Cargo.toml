@@ -11,6 +11,7 @@ members = [
     "audio_modules",
     "audio_stack",
     "play_stack",
+    "sound_garden",
     "vst_stack"
 ]
 

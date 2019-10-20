@@ -6,7 +6,10 @@ edition = "2018"
 
 [dependencies]
 audio_graph = { path = "../audio_graph" }
-rand = "0.6.5"
 itertools = "0.8.0"
 rustfft = "3.0.0"
-apodize = "0.3.1"
+apodize = "1.0.0"
+
+[dependencies.rand]
+version = "0.7.2"
+features = ["small_rng"]

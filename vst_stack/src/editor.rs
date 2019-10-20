@@ -18,16 +18,16 @@ impl vst::editor::Editor for Editor {
         (0, 0)
     }
 
-    fn open(&mut self, parent: *mut std::ffi::c_void) {
+    fn open(&mut self, parent: *mut std::ffi::c_void) -> bool {
         if self.is_open {
-            return;
+            return self.is_open;
         };
         let view = parent as *mut Object;
         let (x, y) = self.position();
         let (w, h) = self.size();
         unsafe {
             let text_field = NSTextField::alloc(nil);
-            msg_send![
+            let _: () = msg_send![
                 text_field,
                 initWithFrame:
                     NSRect::new(
@@ -35,14 +35,15 @@ impl vst::editor::Editor for Editor {
                         NSSize::new(f64::from(w), f64::from(h)),
                     )
             ];
-            msg_send![
+            let _: () = msg_send![
                 text_field,
                 setStringValue: NSString::alloc(nil).init_str(&self.path)
             ];
-            msg_send![text_field, autorelease];
+            let _: () = msg_send![text_field, autorelease];
             view.addSubview_(text_field);
         }
         self.is_open = true;
+        return self.is_open;
     }
 
     fn close(&mut self) {

@@ -25,7 +25,7 @@ pub struct SpectralTransform {
     period_offset: usize,
     window: Vec<Complex<Sample>>,
     frame_number: usize,
-    transform: Box<FnMut(&mut Vec<Complex<Sample>>) + Send>,
+    transform: Box<dyn FnMut(&mut Vec<Complex<Sample>>) + Send>,
 }
 
 impl SpectralTransform {
@@ -35,7 +35,7 @@ impl SpectralTransform {
         channels: u8,
         window_size: usize,
         period: usize,
-        transform: Box<FnMut(&mut Vec<Complex<Sample>>) + Send>,
+        transform: Box<dyn FnMut(&mut Vec<Complex<Sample>>) + Send>,
     ) -> Self {
         let channels = channels as usize;
         let mut input_buffers = Vec::with_capacity(channels);

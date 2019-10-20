@@ -1,6 +1,6 @@
 use audio_graph::{stack, AudioGraph, Sample};
 use audio_modules::*;
-use rand::{rngs::SmallRng, seq::SliceRandom, FromEntropy};
+use rand::{rngs::SmallRng, seq::SliceRandom, SeedableRng};
 
 macro_rules! connect {
     ( $ops:ident, $class:ident, $($rest:tt)* ) => { $ops.push(stack::Op::Connect(Box::new($class::new($($rest)*)))) };
@@ -83,6 +83,10 @@ pub fn parse_ops(s: &str, channels: u8, sample_rate: u32) -> Result<Vec<stack::O
             // TODO parametrize
             "yin" => connect!(ops, Yin, channels, sample_rate, 1024, 64, 0.2),
             "zip" => connect!(ops, Zip, channels),
+            "dup" => ops.push(stack::Op::Dup),
+            "swap" => ops.push(stack::Op::Swap),
+            "rot" => ops.push(stack::Op::Rot),
+            "pop" => ops.push(stack::Op::Pop),
             _ => match token.parse::<Sample>() {
                 Ok(x) => connect!(ops, Constant, channels, x),
                 Err(_) => {

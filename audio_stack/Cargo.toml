@@ -7,4 +7,7 @@ edition = "2018"
 [dependencies]
 audio_graph = { path = "../audio_graph" }
 audio_modules = { path = "../audio_modules" }
-rand = "0.6.5"
+
+[dependencies.rand]
+version = "0.7.2"
+features = ["small_rng"]

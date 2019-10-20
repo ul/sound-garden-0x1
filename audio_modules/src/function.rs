@@ -90,7 +90,7 @@ impl Module for Fn3 {
 
     fn sample(&mut self, input: &Frame) {
         for (y, x) in self.ys.iter_mut().zip(input.chunks(3)) {
-            *y = (self.f)(x[0], x[1], x[3]);
+            *y = (self.f)(x[0], x[1], x[2]);
         }
     }
 }

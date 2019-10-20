@@ -4,7 +4,7 @@
 //!
 //! Sources to connect: none required.
 use audio_graph::{Frame, Module, Sample};
-use rand::{rngs::SmallRng, FromEntropy, Rng};
+use rand::{rngs::SmallRng, Rng, SeedableRng};
 
 pub struct WhiteNoise {
     rng: SmallRng,
